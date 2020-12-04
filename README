@@ -1,0 +1,43 @@
+README
+
+4 main components.
+index.js contains FilteredList.js
+FilteredList.js contains DisplayLis.js & Playlist.js
+
+
+index.js
+- This is the App, as a component
+- This is where images are imported and is ready to use
+- Contains the songs list as a constant, with attributes of name, year, album, rate by me, duration of the music, and the image.
+- 12 songs are stored
+- FilteredList component is instantiated and the songs list is passed into the parameter
+
+FilteredList.js
+- This is FilteredList, as a component
+- It has several state variables, including rate, the album name, sort type, and the playlist items list. The state variables are configured everytime there is an action, for example, filtering, sorting, button click to add items to the playlist.
+- The state variables are created in teh constructor
+- The filter and sort default state variable is "All"
+- filter() and/or sort() is used when the mode is changed on the navigation bar
+- add_to_playlist and remove_from_playlist function is defined here, where it is called from DisplayList.js and Playlist.js respectively
+- Inside the render function, first the navigation bar is set up, then Playlist component, then DisplayList component below it
+- The navigation bar has drop down menus to pick the filtering options
+
+
+DisplayList.js
+- This is DisplayList, as a component
+- This displays the songs from the song list
+- The song list form FilteredList is passed to here
+- First line with name, followed by album name, then an image of that song, then year released, the rate criteria by me, and finally the duration of the music.
+- Each song has a button that adds the song to the playlist when clicked, where the "Total Time" is updated accordingly
+
+
+Playlist.js
+- This is Playlist, as a component
+- This shows the order of your playlist
+- The "Total Time" aggregates the total time of the entire playlist
+- Each song has a button associated with it, which removes that song from the playlist, where the "Total Time" is updated accordingly
+- Used list group items to present the songs
+- The playlist items list is passed from FilteredList.js to here as entries
+
+
+Used React Bootstrap as an open source front end frameworks
